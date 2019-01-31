@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <!-- Light mode theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#00cbfd</item>
+        <item name="colorPrimaryDark">#0077ff</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="backgroundcolour">#fcfcfc</item>
+        <item name="textcolour">#808080</item>
+        <item name="tintcolour">#000</item>
+        <item name="buttoncolour">#00cbfd</item>
+        <item name="navigationbarcolour">#ffffff</item>
+        <item name="toolbarcolour">#ffffff</item>
+        <item name="bg_gradient">#ffffff</item>
+
+    </style>
+
+    <!-- Dark mode theme. -->
+    <style name="dankMode" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#fff</item>
+        <item name="colorPrimaryDark">#000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="backgroundcolour">#303030</item>
+        <item name="textcolour">#ffffff</item>
+        <item name="tintcolour">#ffffff</item>
+        <item name="buttoncolour">#646464</item>
+        <item name="navigationbarcolour">#212121</item>
+        <item name="toolbarcolour">#212121</item>
+        <item name="bg_gradient">#000</item>
+
+    </style>
+
+</resources>

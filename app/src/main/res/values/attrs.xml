@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="themes">
+        <attr name="backgroundcolour" format="color"/>
+        <attr name="textcolour" format="color"/>
+        <attr name="tintcolour" format="color"/>
+        <attr name="buttoncolour" format="color"/>
+        <attr name="navigationbarcolour" format="color"/>
+        <attr name="toolbarcolour" format="color"/>
+        <attr name="bg_gradient" format="color"/>
+    </declare-styleable>
+</resources>

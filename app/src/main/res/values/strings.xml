@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Cloud Images</string>
+
+    <string name="images_title">Your Images</string>
+    <string name="your_liked">Your liked</string>
+    <string name="settings">Your Settings</string>
+
+    <string name="sign_in">Sign in</string>
+    <string name="register">Register</string>
+
+    <string name="back_to_registration">Go back to registration</string>
+    <string name="Go_to_sign_in">Already have an Account? Click Here</string>
+
+    <string name="account_settings">Account Settings</string>
+    <string name="rate">Rate</string>
+    <string name="set_theme">Theme</string>
+    <string name="user_sign_out">Sign out</string>
+
+</resources>

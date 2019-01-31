@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relLayout1"
+        android:background="?attr/toolbarcolour"
+        >
+
+        <RelativeLayout
+            android:id="@+id/relLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/snippet_toolbar"/>
+        </RelativeLayout>
+
+        <ListView
+            android:background="?attr/backgroundcolour"
+            android:id="@+id/account_settings_listView"
+            android:layout_below="@id/relLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
