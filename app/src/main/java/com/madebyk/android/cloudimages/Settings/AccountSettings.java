@@ -20,12 +20,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.madebyk.android.cloudimages.R;
 import com.madebyk.android.cloudimages.RegistrationAndSignIn.RegistrationActivity;
+import com.madebyk.android.cloudimages.RegistrationAndSignIn.SignInActivity;
 
 import java.util.ArrayList;
 
 public class AccountSettings extends AppCompatActivity {
 
     private static final String TAG = "AccountSettings";
+
+    //Set the firebase stuff
 
     //member vars
     ImageView toolbar_image;
@@ -34,7 +37,7 @@ public class AccountSettings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+        if(AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_YES){
             setTheme(R.style.AppTheme);
         }
         else{
@@ -53,8 +56,8 @@ public class AccountSettings extends AppCompatActivity {
         Log.d(TAG, "setUpToolbar: setting up toolbar");
         toolbar_image = (ImageView) findViewById(R.id.snippet_toolbar_image);
         toolbar_text = (TextView) findViewById(R.id.snippet_toolbar_text);
-        toolbar_image.setImageResource(R.drawable.ic_back_arrow);
-        toolbar_text.setText(mUser.getDisplayName());
+        toolbar_image.setImageResource(R.drawable.ic_arrow_back_arrow);
+        toolbar_text.setText(mUser.getProviderId());
         toolbar_text.setTextSize(20f);
         Toolbar toolbar = (Toolbar) findViewById(R.id.images_toolbar);
         setSupportActionBar(toolbar);
@@ -74,7 +77,7 @@ public class AccountSettings extends AppCompatActivity {
 
         ArrayList<String> account_options = new ArrayList<>();
         account_options.add("Edit Profile");
-        account_options.add("Add Account");
+        account_options.add("Remove Account");
         account_options.add("Sign Out");
 
         ListView listView = (ListView) findViewById(R.id.account_settings_listView);
@@ -89,25 +92,41 @@ public class AccountSettings extends AppCompatActivity {
                         //Does nothing
                         break;
                     case 1:
-                        //Does nothing
+                        AlertDialog.Builder dialog1 = new AlertDialog.Builder(AccountSettings.this);
+                        dialog1.setTitle("Confirmation")
+                                .setMessage("Are you sure you want to remove account and it's contents. Changes cannot be reverted")
+                                .setPositiveButton("Yes, I am sure", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        FirebaseAuth.getInstance().getCurrentUser().delete();
+                                    }
+                                })
+                                .setNegativeButton("No I am not sure", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //Do nothing
+                                    }
+                                });
                         break;
                     case 2:
-                        AlertDialog.Builder dialog = new AlertDialog.Builder(AccountSettings.this);
-                        dialog.setTitle("Confirmation")
+                        AlertDialog.Builder dialog2 = new AlertDialog.Builder(AccountSettings.this);
+                        dialog2.setTitle("Confirmation")
                                 .setMessage("Are you sure you want to sign out of account?")
                                 .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         FirebaseAuth.getInstance().signOut();
-                                        Intent intent = new Intent(AccountSettings.this, RegistrationActivity.class);
+                                        Intent intent = new Intent(AccountSettings.this, SignInActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
+                                        finishAffinity();
                                     }
                                 })
                                 .setNegativeButton("NO", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        //Do nothing
+                                        //Does nothing
                                     }
                                 }).show();
                         break;

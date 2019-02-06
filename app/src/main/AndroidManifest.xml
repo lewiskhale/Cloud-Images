@@ -6,24 +6,27 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
+        android:name=".Application.ImageApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegistrationAndSignIn.RegistrationActivity">
+        <activity android:name=".RegistrationAndSignIn.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegistrationAndSignIn.SignInActivity"/>
-        <activity android:name=".Images_Home.ImagesActivity"/>
-        <activity android:name=".Images_Home.ImagesFullActivity"/>
+        <activity android:name=".RegistrationAndSignIn.RegistrationActivity"/>
+        <activity android:name=".RegistrationAndSignIn.ResetPasswordActivity"/>
+        <activity android:name=".CloudImages.CloudImagesActivity"/>
+        <activity android:name=".LocalImages.LocalImagesActivity"/>
+        <activity android:name=".CloudImages.CloudImagesFullActivity"/>
         <activity android:name=".Settings.SettingsActivity"/>
-        <activity android:name=".Liked.LikedActivity"/>
         <activity android:name=".Settings.AccountSettings"/>
+        <activity android:name=".LocalImages.LocalImagesFullActivity"/>
     </application>
 
 </manifest>

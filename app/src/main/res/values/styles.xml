@@ -8,20 +8,20 @@
         <item name="colorPrimary">#00cbfd</item>
         <item name="colorPrimaryDark">#0077ff</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="backgroundcolour">#fcfcfc</item>
+        <item name="backgroundcolour">#e7e7e7</item>
         <item name="textcolour">#808080</item>
         <item name="tintcolour">#000</item>
         <item name="buttoncolour">#00cbfd</item>
         <item name="navigationbarcolour">#ffffff</item>
         <item name="toolbarcolour">#ffffff</item>
-        <item name="bg_gradient">#ffffff</item>
+        <item name="bg_gradient">#e4e4e4</item>
 
     </style>
 
     <!-- Dark mode theme. -->
     <style name="dankMode" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#fff</item>
+        <item name="colorPrimary">#680a0a</item>
         <item name="colorPrimaryDark">#000</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="backgroundcolour">#303030</item>

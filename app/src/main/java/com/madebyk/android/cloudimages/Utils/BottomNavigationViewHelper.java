@@ -8,8 +8,8 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
-import com.madebyk.android.cloudimages.Images_Home.ImagesActivity;
-import com.madebyk.android.cloudimages.Liked.LikedActivity;
+import com.madebyk.android.cloudimages.CloudImages.CloudImagesActivity;
+import com.madebyk.android.cloudimages.LocalImages.LocalImagesActivity;
 import com.madebyk.android.cloudimages.R;
 import com.madebyk.android.cloudimages.Settings.SettingsActivity;
 
@@ -31,16 +31,16 @@ public class BottomNavigationViewHelper {
             
             public boolean onNavigationItemSelected(MenuItem item){
                 switch (item.getItemId()){
-                    case R.id.ic_home:
-                        if(!(context instanceof ImagesActivity)){
-                            Intent intent1 = new Intent(context, ImagesActivity.class);
+                    case R.id.ic_download_navtool:
+                        if(!(context instanceof CloudImagesActivity)){
+                            Intent intent1 = new Intent(context, CloudImagesActivity.class);
                             context.startActivity(intent1);
                             ((Activity) context).finish();
                         }
                         break;
-                    case R.id.ic_liked:
-                        if(!(context instanceof LikedActivity)) {
-                            Intent intent2 = new Intent(context, LikedActivity.class);
+                    case R.id.ic_upload_navtool:
+                        if(!(context instanceof LocalImagesActivity)) {
+                            Intent intent2 = new Intent(context, LocalImagesActivity.class);
                             context.startActivity(intent2);
                             ((Activity) context).finish();
                         }

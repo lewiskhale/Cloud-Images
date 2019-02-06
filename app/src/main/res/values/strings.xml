@@ -1,15 +1,20 @@
 <resources>
-    <string name="app_name">Cloud Images</string>
+    <string name="app_name">App Name Here</string>
 
-    <string name="images_title">Your Images</string>
-    <string name="your_liked">Your liked</string>
+    <string name="images_title">Your Cloud Images</string>
+    <string name="your_liked">Your Local Images</string>
     <string name="settings">Your Settings</string>
 
     <string name="sign_in">Sign in</string>
     <string name="register">Register</string>
 
-    <string name="back_to_registration">Go back to registration</string>
+    <string name="back_to_registration">Don"'"t have an Account? Create New Account</string>
     <string name="Go_to_sign_in">Already have an Account? Click Here</string>
+    <string name="Remember_me">Remember me</string>
+    <string name="forgot_password">Forgot my password</string>
+    <string name="send_email">Send Email</string>
+    <string name="tv_pass_reset">We will email you a link after when you provide your email and click the send button. Please click on that link to reset your password</string>
+    <string name="et_pass_reset_email">enter your email here</string>
 
     <string name="account_settings">Account Settings</string>
     <string name="rate">Rate</string>

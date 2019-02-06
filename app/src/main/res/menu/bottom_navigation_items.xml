@@ -2,20 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/ic_home"
-        android:icon="@drawable/ic_home"
+        android:id="@+id/ic_download_navtool"
+        android:icon="@drawable/ic_download_from_cloud"
         android:title=""
         ></item>
 
     <item
-        android:id="@+id/ic_liked"
-        android:icon="@drawable/ic_liked"
+        android:id="@+id/ic_upload_navtool"
+        android:icon="@drawable/ic_upload_to_cloud"
         android:title=""
         ></item>
 
     <item
         android:id="@+id/ic_options"
-        android:icon="@drawable/ic_options"
+        android:icon="@drawable/ic_settings"
         android:title=""
         ></item>
 

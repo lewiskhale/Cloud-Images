@@ -1,76 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/kindaGrey"
-    android:padding="15dp">
+    android:background="?attr/backgroundcolour">
 
-    <EditText
-        android:id="@+id/username_reg"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/signing_text_bg"
-        android:gravity="center"
-        android:hint="username"
-        android:inputType="text"
+        android:layout_height="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/email_reg"
+        <include layout="@layout/snippet_reg_signin_toolbar" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/signing_text_bg"
-        android:gravity="center"
-        android:hint="email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/passwd_reg"
-        app:layout_constraintEnd_toEndOf="@+id/passwd_reg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_reg" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/relativeLayout">
 
-    <EditText
-        android:id="@+id/passwd_reg"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/signing_text_bg"
-        android:gravity="center"
-        android:hint="password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/email_reg"
-        app:layout_constraintStart_toStartOf="@+id/email_reg"
-        app:layout_constraintTop_toBottomOf="@+id/email_reg" />
+        <EditText
+            android:id="@+id/username_reg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/signing_text_bg"
+            android:gravity="center"
+            android:hint="username (optional)"
+            android:inputType="text"/>
 
-    <Button
-        android:id="@+id/registration_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/register"
-        android:textColor="@color/white"
-        android:background="@drawable/sign_in_bg_buttons"
-        app:layout_constraintEnd_toEndOf="@+id/passwd_reg"
-        app:layout_constraintStart_toStartOf="@+id/passwd_reg"
-        app:layout_constraintTop_toBottomOf="@+id/passwd_reg" />
+        <EditText
+            android:id="@+id/email_reg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/signing_text_bg"
+            android:gravity="center"
+            android:hint="email"
+            android:inputType="textEmailAddress"
+            android:layout_below="@id/username_reg"/>
 
-    <TextView
-        android:id="@+id/tv_SignIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="@string/Go_to_sign_in"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/registration_button"
-        app:layout_constraintStart_toStartOf="@+id/registration_button"
-        app:layout_constraintTop_toBottomOf="@+id/registration_button" />
+        <EditText
+            android:id="@+id/passwd_reg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/signing_text_bg"
+            android:gravity="center"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:layout_below="@+id/email_reg"/>
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/registration_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/sign_in_bg_buttons"
+            android:clickable="true"
+            android:elevation="100dp"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            android:layout_below="@+id/passwd_reg"/>
+
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/remember_me_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/registration_button"/>
+
+        <TextView
+            android:id="@+id/remember_me_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="14dp"
+            android:text="@string/Remember_me"
+            android:layout_below="@+id/registration_button"
+            android:layout_toRightOf="@+id/remember_me_checkbox"/>
+
+        <TextView
+            android:id="@+id/tv_SignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/Go_to_sign_in"
+            android:textColor="?attr/colorAccent"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_below="@+id/remember_me_checkbox"/>
+    </RelativeLayout>
+</RelativeLayout>

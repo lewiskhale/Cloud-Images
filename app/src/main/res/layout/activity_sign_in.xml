@@ -1,62 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="?attr/backgroundcolour"
-    android:padding="15dp"
-    >
+    android:background="?attr/backgroundcolour">
 
-    <EditText
-        android:id="@+id/email_sign_in"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/signing_text_bg"
-        android:gravity="center"
-        android:hint="email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/passwd_sign_in"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/signing_text_bg"
-        android:gravity="center"
-        android:hint="password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/email_sign_in"
-        app:layout_constraintStart_toStartOf="@+id/email_sign_in"
-        app:layout_constraintTop_toBottomOf="@+id/email_sign_in" />
+            <include layout="@layout/snippet_reg_signin_toolbar" />
+        </RelativeLayout>
 
-    <Button
-        android:id="@+id/sign_in_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/sign_in_bg_buttons"
-        android:text="@string/sign_in"
-        android:textColor="?attr/textcolour"
-        app:layout_constraintEnd_toEndOf="@+id/passwd_sign_in"
-        app:layout_constraintStart_toStartOf="@+id/passwd_sign_in"
-        app:layout_constraintTop_toBottomOf="@+id/passwd_sign_in" />
+        <RelativeLayout
+            android:layout_below="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="24dp">
 
-    <TextView
-        android:id="@+id/tv_Back_to_reg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="@string/back_to_registration"
-        android:textColor="?attr/textcolour"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/sign_in_button"
-        app:layout_constraintStart_toStartOf="@+id/sign_in_button"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
+            <EditText
+                android:id="@+id/email_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/signing_text_bg"
+                android:gravity="center"
+                android:hint="email"
+                android:inputType="textEmailAddress" />
 
-</android.support.constraint.ConstraintLayout>
+            <EditText
+                android:id="@+id/passwd_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/signing_text_bg"
+                android:gravity="center"
+                android:hint="password"
+                android:inputType="textPassword"
+                android:layout_below="@+id/email_sign_in"
+                />
+
+            <Button
+                android:id="@+id/sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/sign_in_bg_buttons"
+                android:clickable="true"
+                android:elevation="100dp"
+                android:text="@string/sign_in"
+                android:textColor="?attr/textcolour"
+                android:layout_below="@+id/passwd_sign_in"
+                />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/remember_me_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/sign_in_button"
+                />
+
+            <TextView
+                android:id="@+id/remember_me_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="14dp"
+                android:text="@string/Remember_me"
+                android:layout_below="@id/sign_in_button"
+                android:layout_toRightOf="@+id/remember_me_checkbox"
+                />
+
+            <TextView
+                android:id="@+id/tv_Back_to_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/back_to_registration"
+                android:textColor="?attr/colorAccent"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_below="@+id/remember_me_tv"
+                />
+
+            <TextView
+                android:id="@+id/tv_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/forgot_password"
+                android:textColor="?attr/textcolour"
+                android:textSize="15sp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="50dp"
+                />
+
+        </RelativeLayout>
+
+</RelativeLayout>

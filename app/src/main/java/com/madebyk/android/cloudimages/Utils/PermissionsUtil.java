@@ -2,16 +2,18 @@ package com.madebyk.android.cloudimages.Utils;
 
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.content.ContextCompat;
+import android.widget.Toast;
 
 public final class PermissionsUtil{
 
 
     public static boolean checkPermissions(Context context, String[] permissions){
         for(String permission : permissions){
-            if(!checkPermission(context, permission)){
+            if(checkPermission(context, permission) == false){
                 return false;
             }
         }
